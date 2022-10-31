@@ -15,12 +15,12 @@ const UserSchema = new mongoose.Schema({
     password: {
         type: String,
         require: true,
-        select: false
     }
 });
 
 UserSchema.pre('save', async function (next) {
-    const hash = await bcrypt.hash(this.password, 10);
+    const salt = await bcrypt.genSalt(12);
+    const hash = await bcrypt.hash(this.password, salt);
     this.password = hash;
     next();
 })
