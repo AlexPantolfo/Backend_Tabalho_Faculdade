@@ -1,4 +1,5 @@
 import Router from 'express'
+import { Request, Response } from 'express'
 import userController from './controllers/userController';
 import jwt from "jsonwebtoken";
 
@@ -20,6 +21,9 @@ function checkToken(req, res, next) {
     }
 }
 
+routes.get("/", (req: Request, res: Response) => {
+    res.json({ message: "Hello world!" });
+});
 
 routes.post('/addUser', userController.addUser)
 routes.post('/login', userController.login)
