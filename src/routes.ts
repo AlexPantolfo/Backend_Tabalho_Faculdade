@@ -25,6 +25,10 @@ routes.get("/", (req: Request, res: Response) => {
     res.json({ message: "Hello world!" });
 });
 
+routes.get("/teste", (req: Request, res: Response) => {
+    res.json({ message: "essa rota funciona" });
+});
+
 routes.post('/addUser', userController.addUser)
 routes.post('/login', userController.login)
 
