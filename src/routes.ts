@@ -25,7 +25,7 @@ routes.get("/", (req: Request, res: Response) => {
     res.json({ message: "Hello world!" });
 });
 
-routes.get("/teste", (req: Request, res: Response) => {
+routes.get("/teste", checkToken, (req: Request, res: Response) => {
     res.json({ message: "essa rota funciona" });
 });
 
