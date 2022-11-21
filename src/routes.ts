@@ -34,10 +34,11 @@ routes.get("/teste", checkToken, (req: Request, res: Response) => {
 routes.post('/addUser', userController.addUser)
 routes.post('/login', userController.login)
 
-routes.post('/editContact', checkToken, contactController.editContact)
+routes.put('/editContact', checkToken, contactController.editContact)
 
 routes.post('/addVideo', checkToken, videoController.addVideo)
 routes.get('/getVideos', checkToken, videoController.getVideos)
-routes.post('/editVideo/:id', checkToken, videoController.editVideo)
+routes.put('/editVideo/:id', checkToken, videoController.editVideo)
+routes.delete('/deleteVideo/:id', checkToken, videoController.deleteVideo)
 
 export default routes;

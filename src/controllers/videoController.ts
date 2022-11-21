@@ -45,6 +45,21 @@ class VideoController {
         }
     }
 
+    async deleteVideo(req: Request, res: Response) {
+        {
+            try {
+
+                const id: string = req.params.id;
+                await Videos.findByIdAndDelete(id)
+
+                return res.send("Vídeo deletado com sucesso").end();
+
+            } catch (err) {
+                return res.status(400).send({ error: err }).end();
+            }
+        }
+    }
+
 }
 
 export default new VideoController;
