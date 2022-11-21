@@ -1,6 +1,7 @@
 import Router from 'express'
 import { Request, Response } from 'express'
 import userController from './controllers/userController';
+import contactController from './controllers/contactController';
 import jwt from "jsonwebtoken";
 
 const routes = Router();
@@ -31,5 +32,7 @@ routes.get("/teste", checkToken, (req: Request, res: Response) => {
 
 routes.post('/addUser', userController.addUser)
 routes.post('/login', userController.login)
+
+routes.post('/editContact', checkToken, contactController.editContact)
 
 export default routes;
