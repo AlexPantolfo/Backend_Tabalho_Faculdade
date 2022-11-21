@@ -1,3 +1,4 @@
+import { UserModel } from './../../models/userModel';
 import mongoose from "mongoose";
 import bcrypt from "bcrypt";
 
@@ -25,4 +26,4 @@ UserSchema.pre('save', async function (next) {
     next();
 })
 
-export default mongoose.model('User', UserSchema);
+export default mongoose.model<UserModel>('User', UserSchema);
