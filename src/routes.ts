@@ -2,6 +2,7 @@ import Router from 'express'
 import { Request, Response } from 'express'
 import userController from './controllers/userController';
 import contactController from './controllers/contactController';
+import videoController from './controllers/videoController';
 import jwt from "jsonwebtoken";
 
 const routes = Router();
@@ -34,5 +35,9 @@ routes.post('/addUser', userController.addUser)
 routes.post('/login', userController.login)
 
 routes.post('/editContact', checkToken, contactController.editContact)
+
+routes.post('/addVideo', checkToken, videoController.addVideo)
+routes.get('/getVideos', checkToken, videoController.getVideos)
+routes.post('/editVideo/:id', checkToken, videoController.editVideo)
 
 export default routes;
