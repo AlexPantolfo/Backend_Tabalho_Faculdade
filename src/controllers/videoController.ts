@@ -1,6 +1,6 @@
 import { Request, Response } from 'express'
 import Videos from '../schemas/videos'
-
+import { ErrorsMongodb } from '../enums/errorsMongodb'
 class VideoController {
 
     async addVideo(req: Request, res: Response) {
@@ -10,7 +10,7 @@ class VideoController {
 
                 return res.send({ video }).end();
             } catch (err) {
-                if (err.code === 11000) {
+                if (err.code === ErrorsMongodb.AlreadyExists) {
                     return res.status(400).send("Vídeo já cadastrado").end();
                 }
                 return res.status(400).send({ error: err }).end();
