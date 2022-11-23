@@ -37,7 +37,7 @@ routes.post('/login', userController.login)
 routes.put('/editContact', checkToken, contactController.editContact)
 
 routes.post('/addVideo', checkToken, videoController.addVideo)
-routes.get('/getVideos', checkToken, videoController.getVideos)
+routes.get('/getVideos', videoController.getVideos)
 routes.put('/editVideo/:id', checkToken, videoController.editVideo)
 routes.delete('/deleteVideo/:id', checkToken, videoController.deleteVideo)
 

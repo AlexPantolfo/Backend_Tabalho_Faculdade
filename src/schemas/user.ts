@@ -1,4 +1,4 @@
-import { UserModel } from './../../models/userModel';
+import { UserModel } from '../models/userModel';
 import mongoose from "mongoose";
 import bcrypt from "bcrypt";
 

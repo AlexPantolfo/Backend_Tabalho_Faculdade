@@ -1,5 +1,5 @@
 import { Request, Response } from 'express'
-import Videos from '../database/Schemas/videos'
+import Videos from '../schemas/videos'
 
 class VideoController {
 

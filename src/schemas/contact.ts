@@ -1,4 +1,4 @@
-import { ContactModel } from './../../models/contactModel';
+import { ContactModel } from '../models/contactModel';
 import mongoose from "mongoose";
 
 const ContactSchema = new mongoose.Schema({

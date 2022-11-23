@@ -1,5 +1,5 @@
 import { Request, Response } from 'express'
-import Contact from '../database/Schemas/contact'
+import Contact from '../schemas/contact'
 
 class ContactController {
 
