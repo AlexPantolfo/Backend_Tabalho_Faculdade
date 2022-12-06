@@ -8,7 +8,7 @@ import jwt from "jsonwebtoken";
 const multer = require('multer')
 
 const storage = multer.diskStorage({
-    destination: "anexos",
+    destination: "src/anexos",
     filename: (req: any, file: { originalname: any; }, cb: (arg0: null, arg1: any) => void) => {
         cb(null, file.originalname)
     }
