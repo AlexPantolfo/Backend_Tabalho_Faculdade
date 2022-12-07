@@ -7,10 +7,6 @@ import * as dotenv from 'dotenv'
 dotenv.config()
 const app = express();
 
-// let corsOptions = {
-//     origin: ['']
-// };
-
 const dbUser = process.env.DB_USER;
 const dbPass = process.env.DB_PASS;
 
