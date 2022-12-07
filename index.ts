@@ -2,7 +2,7 @@ import express from "express";
 import mongoose from "mongoose";
 import routes from "./src/routes";
 import * as dotenv from 'dotenv'
-var cors = require('cors')
+const cors = require('cors');
 dotenv.config()
 const app = express();
 
@@ -14,8 +14,8 @@ const uri = `mongodb+srv://${dbUser}:${dbPass}@cluster0.7yvwjei.mongodb.net/?ret
 mongoose.connect(uri)
 mongoose.Promise = global.Promise;
 
-app.use(cors())
 app.use(express.json());
+app.use(cors())
 app.set("port", process.env.PORT || 3000);
 app.use(routes);
 
