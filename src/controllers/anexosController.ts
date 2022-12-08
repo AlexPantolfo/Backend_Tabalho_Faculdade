@@ -1,20 +1,14 @@
 import { Request, Response } from 'express'
 import Anexos from '../schemas/anexos'
 import { ErrorsMongodb } from '../enums/errorsMongodb'
-const multer = require('multer')
-
-interface MulterRequest extends Request {
-    file: any;
-}
-
 class AnexoController {
     async addAnexo(req: Request, res: Response) {
-        const { titulo, descricao } = req.body;
+        const { titulo, descricao, anexo } = req.body;
 
         try {
 
             const newAnexo = new Anexos({
-                anexo: (req as MulterRequest).file.filename,
+                anexo: anexo,
                 titulo: titulo,
                 descricao: descricao,
             })

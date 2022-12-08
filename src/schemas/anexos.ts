@@ -11,7 +11,8 @@ const AnexosSchema = new mongoose.Schema({
     },
     titulo: {
         type: String,
-        require: true
+        require: true,
+        upsert: true
     },
     descricao: {
         type: String,
