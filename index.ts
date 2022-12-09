@@ -18,7 +18,7 @@ mongoose.connect(uri)
 mongoose.Promise = global.Promise;
 
 app.use(express.json());
-app.use(cors({ origin: "http://127.0.0.1:5500", credentials: true }))
+app.use(cors({ origin: "https://trabalho-faculdade-gray.vercel.app", credentials: true }))
 app.set("port", process.env.PORT || 3000);
 app.use(routes);
 
