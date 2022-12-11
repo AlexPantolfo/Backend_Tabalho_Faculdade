@@ -8,10 +8,7 @@ const app = express();
 
 const dbUser = process.env.DB_USER;
 const dbPass = process.env.DB_PASS;
-//fazendo alterações pro vercel dar pull
-function teste() {
-    const essaFuncaoNaoFazNada = "Teste"
-}
+
 const uri = `mongodb+srv://${dbUser}:${dbPass}@cluster0.7yvwjei.mongodb.net/?retryWrites=true&w=majority`;
 
 mongoose.connect(uri)
