@@ -35,9 +35,15 @@ routes.post('/login', userController.login)
 
 routes.post('/addVideo', checkToken, videoController.addVideo)
 routes.get('/getVideos', videoController.getVideos)
+routes.get('/getVideo/:id', videoController.getVideo)
 routes.put('/editVideo/:id', checkToken, videoController.editVideo)
 routes.delete('/deleteVideo/:id', checkToken, videoController.deleteVideo)
 
 routes.post('/addAnexo', checkToken, anexoController.addAnexo)
+routes.get('/getAnexos', anexoController.getAnexos)
+routes.get('/getAnexo/:id', anexoController.getAnexo)
+routes.put('/editAnexo/:id', checkToken, anexoController.editAnexo)
+routes.delete('/deleteAnexo/:id', checkToken, anexoController.deleteAnexo)
+
 
 export default routes;

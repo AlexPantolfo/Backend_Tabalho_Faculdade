@@ -43,6 +43,20 @@ class AnexoController {
         }
     }
 
+    async getAnexo(req: Request, res: Response) {
+        {
+            try {
+                const id: string = req.params.id;
+                const anexo = await Anexos.findById(id);
+
+                return res.send({ anexo }).end();
+
+            } catch (err) {
+                return res.status(400).send({ error: err }).end();
+            }
+        }
+    }
+
     async editAnexo(req: Request, res: Response) {
         {
             try {

@@ -31,6 +31,20 @@ class VideoController {
         }
     }
 
+    async getVideo(req: Request, res: Response) {
+        {
+            try {
+                const id: string = req.params.id;
+                const video = await Videos.findById(id);
+
+                return res.send({ video }).end();
+
+            } catch (err) {
+                return res.status(400).send({ error: err }).end();
+            }
+        }
+    }
+
     async editVideo(req: Request, res: Response) {
         {
             try {
